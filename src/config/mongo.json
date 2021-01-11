@@ -1,0 +1,7 @@
+{
+	"host": "localhost",
+	"port": "2010",
+	"mongoDb": {
+		"URI" : "mongodb://localhost:27017/base_express_ts"
+	}
+}
