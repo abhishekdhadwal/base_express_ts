@@ -9,23 +9,11 @@ import { send } from 'process';
 const admin_scope = app_constansts.scope.admin;
 
 
-const handleCatch = (_: express.Request, res : express.Response, error : string) => {
-      res.send({
-          success : false,
-          error : error,
-      });
-      res.end();
-  }
-
 const login = async (req : express.Request, res : express.Response) => {
       try {
 
             let payloadData = req.body;
-
-            console.log("------------------------payloadData----",payloadData)
-            // console.log("------------------------header----",req.headers)
-
-
+            
             let query = { email : payloadData.email }
             let projection = { __v : 0 }
             let options = { lean : true }
@@ -36,9 +24,8 @@ const login = async (req : express.Request, res : express.Response) => {
                   let password_1 = fetch_data[0].password
                   let password_2 = payloadData.password
 
-                  if(password_1 != password_2) {
-                        throw error.invalid_password;
-                  }else {
+                  if(password_1 != password_2) { throw error.invalid_password }
+                  else {
                         // generate token 
                         let token_data = { 
                               _id : fetch_data[0]._id,
@@ -46,11 +33,11 @@ const login = async (req : express.Request, res : express.Response) => {
                               collection : Models.Admin,
                               token_gen_at : +new Date()
                         }
-                        let get_token = await common_controller.fetch_token(token_data)
-                        res.send({
-                              success : 200,
-                              data : get_token
-                          })
+                        let response = await common_controller.fetch_token(token_data)
+
+                        if(response) { common_controller.handle_success(res, response) }
+                        else { common_controller.handle_failure(res, error.something_went_wrong) }
+                        
                   }
 
             }else {
@@ -59,7 +46,7 @@ const login = async (req : express.Request, res : express.Response) => {
             
       }
       catch(err) {
-            handleCatch(req, res, err);
+            common_controller.handle_catch(req, res, err);
       }
 }
 

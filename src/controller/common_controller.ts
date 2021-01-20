@@ -1,5 +1,6 @@
 
 import * as DAO from '../DAO/index';
+import * as express from 'express';
 import { generate_token } from '../Libs/index';
 
 
@@ -25,7 +26,35 @@ const fetch_token = async(function_data) => {
       }
 }
 
+const handle_catch = (_: express.Request, res : express.Response, error : any) => {
+      res.send({
+          success : 400,
+          error : error,
+      });
+      res.end();
+}
+
+const handle_success = (res : express.Response, response : any) => {
+      res.send({
+          success : 200,
+          data : response,
+      });
+}
+
+
+const handle_failure = (res : express.Response, error : any) => {
+      res.send({
+          success : 400,
+          error : error,
+      });
+      res.end();
+}
+
 
 export {
-      fetch_token
+      fetch_token,
+      handle_catch,
+      handle_success,
+      handle_failure
+
 }

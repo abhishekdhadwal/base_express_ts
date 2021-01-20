@@ -59,29 +59,21 @@ let otp_not_verified = {
       type : 'otp_not_verified'
 }
 
-let invalid_project_id = {
+let inavlid_token = {
       status_code : 400,
-      custom_msg : 'invalid project id provided',
-      type : 'invalid_project_id'
+      custom_msg : 'inavlid token',
+      type : 'inavlid_token'
 }
 
-let invalid_task_id = {
+let something_went_wrong = {
       status_code : 400,
-      custom_msg : 'invalid task id provided',
-      type : 'invalid_task_id'
+      custom_msg : 'something went wrong',
+      type : 'something_went_wrong'
 }
 
-let invalid_referal_code = {
-      status_code : 400,
-      custom_msg : 'invalid referal code provided',
-      type : 'invalid_referal_code'
-}
 
-let min_withdraw_amount = {
-      status_code : 400,
-      custom_msg : 'your wallet amount in greater than minimum withdraw amount',
-      type : 'min_withdraw_amount'
-}
+
+
 
 export {
       default_msg,
@@ -94,8 +86,6 @@ export {
       phone_no_already_exists,
       invalid_otp,
       otp_not_verified,
-      invalid_project_id,
-      invalid_task_id,
-      invalid_referal_code,
-      min_withdraw_amount
+      inavlid_token,
+      something_went_wrong
 }
