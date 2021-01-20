@@ -1,23 +1,23 @@
 
-import { admin_validator } from '../validator/index';
+import { admin_validator, headers } from '../validator/index';
+import { admin_controller } from '../controller/index';
 
-const base_options = {
-      basePath : '/Admin',
-      description : 'Admin APIs',
-}
 
 const login = {
       method : 'post',
       path : '/login',
-      summary : 'Admin Login API',
-      description : '',
-      contentType : 'application/x-www-form-urlencoded',
-      validators : {
-            body : admin_validator.login
+      options : {
+            summary : 'Admin Login API',
+            description : 'Admin Login API',
+            tags: ['Admin'],
+            output : {},
+            input : { formData : admin_validator.login },
+            handler : admin_controller.login
       }
 }
 
+
 export {
-      base_options,
       login
 }
+

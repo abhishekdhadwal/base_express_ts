@@ -21,6 +21,11 @@ const login = async (req : express.Request, res : express.Response) => {
       try {
 
             let payloadData = req.body;
+
+            console.log("------------------------payloadData----",payloadData)
+            // console.log("------------------------header----",req.headers)
+
+
             let query = { email : payloadData.email }
             let projection = { __v : 0 }
             let options = { lean : true }

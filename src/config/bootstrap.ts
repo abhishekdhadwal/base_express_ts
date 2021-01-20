@@ -5,7 +5,7 @@ const create_admin = async() => {
       try {
 
         // check admin exist or not
-        let query = { email:"admin@gmail.com" }
+        let query = { email : "admin@gmail.com" }
         let projection = { __v : 0 }
         let options = { lean : true }
         let fetch_data : any = await DAO.get_data(Models.Admin, query, projection, options);

@@ -1,0 +1,1 @@
+{"swagger":"2.0","info":{"version":"1.0.0","title":"Title Example","description":"Description API example","termsOfService":"http://swagger.io/terms/","contact":{"name":"Example team"},"license":{"name":"MIT"}},"paths":{},"definitions":{},"host":"localhost:2010","basePath":"/","schemes":["http","https"],"consumes":["application/json"],"produces":["application/json"]}

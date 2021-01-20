@@ -1,9 +1,9 @@
 
 import admin_routes from './admin_routes';
-import user_routes from './user_routes';
+import all_routes from './router';
 
 
 export {
       admin_routes,
-      user_routes
+      all_routes
 }

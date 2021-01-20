@@ -1,9 +1,9 @@
 
 import * as admin_validator from './admin_validator';
-import * as user_validator from './user_validator';
+import { headers } from './headers';
 
 
 export {
-      admin_validator,
-      user_validator
+      headers,
+      admin_validator
 }
