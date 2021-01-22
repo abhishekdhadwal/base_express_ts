@@ -5,7 +5,7 @@ config();
 import swagger_ui from 'swagger-ui-express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import { router } from 'no-hassle';
+import { router } from 'exp_swagger';
 import { swagger_options, basic_auth, connect_to_db } from './src/config/index';
 import * as routes from './src/routes/index';
 import bootstrap_data from './src/config/bootstrap';

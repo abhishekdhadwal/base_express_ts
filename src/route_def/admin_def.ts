@@ -11,7 +11,9 @@ const login = {
             description : 'Admin Login API',
             tags: ['Admin'],
             output : {},
-            input : { formData : admin_validator.login },
+            input : { 
+                  formData : admin_validator.login 
+            },
             handler : admin_controller.login
       }
 }

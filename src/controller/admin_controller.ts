@@ -37,7 +37,7 @@ const login = async (req : express.Request, res : express.Response) => {
 
                         if(response) { common_controller.handle_success(res, response) }
                         else { common_controller.handle_failure(res, error.something_went_wrong) }
-                        
+
                   }
 
             }else {

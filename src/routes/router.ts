@@ -2,7 +2,7 @@
 import express from 'express';
 const app = express();
 
-import { router } from 'no-hassle';
+import { router } from 'exp_swagger';
 import * as route_def from '../route_def/index';
 const { admin_def } = route_def;
 
