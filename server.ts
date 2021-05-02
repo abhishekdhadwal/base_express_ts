@@ -26,11 +26,11 @@ app.use("/Admin", admin_routes)
 
 // make swagger documentation
 router.use(all_routes)
-const swagger_ui_options = { customSiteTitle : 'Game Play' }
+const swagger_ui_options = { customSiteTitle : 'Base Express Ts' }
 app.use('/docs', swagger_ui.serve, swagger_ui.setup(swagger_options, swagger_ui_options));
 
 app.listen(port, () => { 
-    console.log(`App listening at http://localhost:${port}`) 
+  console.log(`App listening at http://localhost:${port}`) 
 })
 
 connect_to_db();
