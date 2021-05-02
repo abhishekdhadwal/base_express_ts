@@ -26,6 +26,7 @@ const login = async (req : express.Request, res : express.Response) => {
 
                   if(password_1 != password_2) { throw error.invalid_password }
                   else {
+                        
                         // generate token 
                         let token_data = { 
                               _id : fetch_data[0]._id,
