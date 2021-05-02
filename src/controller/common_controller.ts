@@ -5,7 +5,7 @@ import { generate_token } from '../Libs/index';
 
 
 
-const fetch_token = async(function_data) => {
+const fetch_token = async(function_data : any) => {
       try {
 
             let fetch_token = await generate_token(function_data)
